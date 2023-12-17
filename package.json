@@ -1,0 +1,15 @@
+{
+	"name": "bht-swt-esa7",
+	"version": "1.0.0",
+	"description": "BHT SWT Esa 7",
+	"main": "bot.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node bot.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"tmi.js": "^1.8.5"
+	}
+}

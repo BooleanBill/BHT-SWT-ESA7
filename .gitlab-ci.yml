@@ -1,0 +1,21 @@
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY" | base64 --decode)
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan 162.55.33.169 >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+deployment_production:
+  script:
+    - ssh -A -tt bill@162.55.33.169 '
+      PATH=$PATH:~/bin &&
+      cd /home/bill/projects/boolbotbill &&
+      git pull &&
+      export NVM_DIR="$HOME/.nvm" &&
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" &&
+      npm ci &&
+      pm2 restart bbb'
+    
+  only:
+    - master
