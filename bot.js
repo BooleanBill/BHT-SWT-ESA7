@@ -344,7 +344,7 @@ class BoolBotBill {
 	 * @param {string} msg - The message to be repeated.
 	 */
 	repeatMessage(target, msg) {
-		this.client.say(target, msg.substr(msg.indexOf(' ') + 1));
+		this.client.say(target, msg.substring(msg.indexOf(' ') + 1));
 	}
 
 	/**
