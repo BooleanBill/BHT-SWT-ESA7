@@ -14,7 +14,7 @@ const opts = {
 	},
 	identity: {
 		username: 'BoolBotBill',
-		password: 'oauth:0dvum2s81gojlg5ienujphn0yyuas4',
+		password: 'oauth:vcp7k8bgf349yb1ifn3xjc4f0mraij',
 	},
 	channels: [
 		'BooleanBill',
