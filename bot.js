@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const tmi = require('tmi.js');
 
 var rndMsg = getRandomIntInclusive(100, 200);
